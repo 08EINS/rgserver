@@ -2678,3 +2678,10 @@ abbr {
 #logo08{
   margin-top:5px;
 }
+
+.black-egg-image{
+  position: fixed;
+  left: 20px;
+  bottom: 35px;
+  z-index: 9999;
+}
