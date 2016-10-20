@@ -15,7 +15,7 @@ $(function() {
       maxh = 475;
     } else if (window.innerWidth >= 720) {
     }
-    var container = $('#container');
+    var container = $('.content-container-1');
     var width = Math.min(window.innerWidth, container.innerWidth());
     var height = Math.min(maxh, window.innerHeight, container.innerHeight());
     var size = Math.min(width - mw, height - mh) - 12;

@@ -2664,3 +2664,17 @@ abbr {
 .email {
   vertical-align: text-bottom;
 }
+
+.nav{
+  background-color: #2d2d2d;
+  padding:10px;
+  color:white;
+}
+
+.nav a{
+  color:white;
+}
+
+#logo08{
+  margin-top:5px;
+}

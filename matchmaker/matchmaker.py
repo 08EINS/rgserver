@@ -263,8 +263,8 @@ t = 0
 
 def main():
     BATCH = 1000
-    REST = 15 * 60
-    PER_REST = 15
+    REST = 5 * 60
+    PER_REST = 30
 
     def lap():
         global t

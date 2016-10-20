@@ -9,7 +9,6 @@ $var title: Getting started
     <ol>
         <li><a href="#a1">Creating a robot</a></li>
         <li><a href="#a2">Accessing the robot's info</a></li>
-        <li><a href="#a3">Example starting robot</a></li>
     </ol>
     <hr/>
 
@@ -96,37 +95,6 @@ $var title: Getting started
             <span class="k">if</span> <span class="n">robot</span><span class="o">.</span><span class="n">player_id</span> <span class="o">==</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">:</span>
                 <span class="k">print</span> <span class="n">loc</span>
 </pre></div>
-    <hr/>
-
-    <a name="a3"></a>
-    <h2>3. Example starting robot</h2>
-    <p>
-        Here's a simple robot to use as a starting point. It looks for any
-        enemies around and attacks them. Otherwise, it tries to move to the
-        center.
-    </p>
-<div class="highlight"><pre><span class="kn">import</span> <span class="nn">rg</span>
-
-<span class="k">class</span> <span class="nc">Robot</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">act</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">game</span><span class="p">):</span>
-        <span class="c"># if we're in the center, stay put</span>
-        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span> <span class="o">==</span> <span class="n">rg</span><span class="o">.</span><span class="n">CENTER_POINT</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[</span><span class="s">'guard'</span><span class="p">]</span>
-
-        <span class="c"># if there are enemies around, attack them</span>
-        <span class="k">for</span> <span class="n">loc</span><span class="p">,</span> <span class="n">bot</span> <span class="ow">in</span> <span class="n">game</span><span class="o">.</span><span class="n">robots</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
-            <span class="k">if</span> <span class="n">bot</span><span class="o">.</span><span class="n">player_id</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">player_id</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">rg</span><span class="o">.</span><span class="n">dist</span><span class="p">(</span><span class="n">loc</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="k">return</span> <span class="p">[</span><span class="s">'attack'</span><span class="p">,</span> <span class="n">loc</span><span class="p">]</span>
-
-        <span class="c"># move toward the center</span>
-        <span class="k">return</span> <span class="p">[</span><span class="s">'move'</span><span class="p">,</span> <span class="n">rg</span><span class="o">.</span><span class="n">toward</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">location</span><span class="p">,</span> <span class="n">rg</span><span class="o">.</span><span class="n">CENTER_POINT</span><span class="p">)]</span>
-</pre></div>
-    <p>As you can see, there is a module called <code>rg</code> being used. We'll look at this next.</p>
-    <p>
-        Implementation detail: only one instance of your robot is created each
-        game, so you can store persistent data in your instance variables.
-    </p>
     <hr/>
     <div class="clearfix">
         <h3 class="left">Back: <a href="/rules">Game rules</a></h3>

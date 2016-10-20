@@ -25,7 +25,30 @@ $def with (content)
     </script>
   </head>
   <body>
+
+
+    <div class="nav large clearfix">
       <div id="container">
+      <div class="left">
+        <a href="/home"><i class="fa fa-fw fa-home"></i><u id="key-home">H</u>ome</a>
+        <a href="/directory"><i class="fa fa-fw fa-trophy"></i><u id="key-w">R</u>angliste</a>
+        <a href="/api"><i class="fa fa-fw fa-book"></i><u id="key-r">A</u>nleitung</a>
+        $if 'logged_in' in sess and sess.logged_in:
+          <a href="/robots"><i class="fa fa-fw fa-wrench"></i>Meine&nbsp;<u id="key-b">B</u>ots</a>
+          <a href="/user/$sess.user_id"><i class="fa fa-fw fa-user"></i><u id="key-p">P</u>rofile</a>
+          <a href="/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        $else:
+          <a href="/reg"><i class="fa fa-fw fa-leaf"></i>Registrieren</a>
+          <a href="/login"><i class="fa fa-fw fa-sign-in"></i><u id="key-l">L</u>ogin</a>
+      </div>
+      <div class="right">
+          <img src="/static/08eins_logo.png" id="logo08"/ >
+      </div>
+    </div>
+
+    </div>
+
+      <div id="container" class="content-container-1">
         $if 'logged_in' in sess and sess.logged_in and (sess.user_id in [8681, 8691, 8695, 8761, 8762, 8987, 9080, 9212, 9418, 9870]):
           <div class="notice">
             Please respect the work of other programmers. Do not abuse the system. You can do better than copy/paste.
@@ -39,36 +62,10 @@ $def with (content)
           Robot Game will be down for a server move tomorrow, Monday June 16th starting approximately
           7:30AM (EST) for 4-6 hours.
         </div>-->
-        <div class="nav large clearfix">
-          <div class="left">
-            <a href="/home"><i class="fa fa-fw fa-home"></i><u id="key-home">H</u>ome</a>
-            <a href="/directory"><i class="fa fa-fw fa-trophy"></i><u id="key-w">W</u>arehouse</a>
-            <a href="/api"><i class="fa fa-fw fa-book"></i><u id="key-r">R</u>ules</a>
-            $if 'logged_in' in sess and sess.logged_in:
-              <a href="/robots"><i class="fa fa-fw fa-wrench"></i>My&nbsp;<u id="key-b">B</u>ots</a>
-          </div>
-          <div class="right">
-            $if 'logged_in' in sess and sess.logged_in:
-              <a href="/user/$sess.user_id"><i class="fa fa-fw fa-user"></i><u id="key-p">P</u>rofile</a>
-              <a href="/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
-            $else:
-              <a href="/reg"><i class="fa fa-fw fa-leaf"></i>Register</a>
-              <a href="/login"><i class="fa fa-fw fa-sign-in"></i><u id="key-l">L</u>ogin</a>
-          </div>
-        </div>
         <div class="content clearfix">
           $:content
         </div>
-        <div class="footer">
-          <div class="left">
-            <span>&copy;&nbsp;2013-2016&nbsp;<a href="https://whitehalmos.org">Peter&nbsp;Wen</a></span>.
-          </div>
-          <div class="right">
-            <a href="https://plus.google.com/communities/118117754881924895861">Community</a> &middot;
-            <a href="https://github.com/RobotGame/rgserver/issues">Bug&nbsp;Reports</a> &middot;
-            <a href="/stats">Stats</a>
-          </div>
-        </div>
+
       </div>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <!--[if lte IE 8]><script src="/static/flot/excanvas.min.js"></script><![endif]-->
