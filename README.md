@@ -1,5 +1,5 @@
-[Robot Game](http://robotgame.net) server code [![Build Status](https://travis-ci.org/RobotGame/rgserver.svg?branch=master)](https://travis-ci.org/RobotGame/rgserver)
-===================================
+[Robot Game](http://robotgame.net) server code! [![Build Status](https://travis-ci.org/08EINS/rgserver.svg?branch=master)](https://travis-ci.org/08EINS/rgserver)
+==================================================================================================================================================================
 
 [![Join the chat at https://gitter.im/RobotGame/rgserver](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/RobotGame/rgserver?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
